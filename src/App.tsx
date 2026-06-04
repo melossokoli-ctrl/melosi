@@ -28,7 +28,7 @@ export default function App() {
   const items = galleryByYear[galleryYear];
 
   return (
-    <main className="min-h-screen overflow-x-hidden">
+   <main className="min-h-screen">
       <a href="#top" className="skip-link">
         Kalo te përmbajtja
       </a>
