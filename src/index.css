@@ -2,16 +2,31 @@
 
 html {
   scroll-padding-top: 5.5rem;
+  min-height: 100%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
-html,
+
 body,
 #root {
   min-height: 100%;
+}
+
+body {
+  min-height: 100dvh;
+  position: relative;
   overflow-x: hidden;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   touch-action: pan-y;
 }
+
+#root {
+  position: relative;
+  overflow: visible;
+  touch-action: pan-y;
+}
+
 ::selection {
   background: color-mix(in oklab, var(--primary) 45%, transparent);
   color: var(--foreground);
@@ -103,4 +118,23 @@ body,
   html {
     scroll-behavior: auto;
   }
+}
+
+/* Mobile browsers: keep the page scrollable even if imported styles set a lock. */
+html,
+body,
+#root,
+main {
+  height: auto !important;
+  min-height: 100% !important;
+  max-height: none !important;
+  overflow-y: visible !important;
+  overscroll-behavior-y: auto !important;
+  touch-action: auto !important;
+}
+
+body {
+  position: static !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
 }
